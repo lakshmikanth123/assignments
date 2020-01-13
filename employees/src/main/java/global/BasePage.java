@@ -8,35 +8,33 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 public class BasePage {
-	
-	
-private AppiumDriver<MobileElement> driver;
-	
-	protected BasePage(AppiumDriver<MobileElement> driver){
+
+	private AppiumDriver<MobileElement> driver;
+
+	protected BasePage(AppiumDriver<MobileElement> driver) {
 		this.driver = driver;
 	}
-	
-	
+
 	/**
 	 * Returns True, if Element is found else false
+	 * 
 	 * @param by
 	 * @param waittime
 	 * @return
 	 */
-	public boolean waitforVisibilityOfElement(By by, int waittime){
+	public boolean waitforVisibilityOfElement(By by, int waittime) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, waittime);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 			return true;
 		} catch (Exception e) {
-		    return false;
+			return false;
 		}
 	}
-	
-	
-	
+
 	/**
 	 * Returns True, if Element is found else false
+	 * 
 	 * @param by
 	 * @param waittime
 	 * @return
@@ -51,7 +49,7 @@ private AppiumDriver<MobileElement> driver;
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * @param by
 	 * @param waittime

@@ -36,8 +36,10 @@ public class EmployeeCreation extends BasePage {
 		driver.findElement(By.id("createButton")).click();
 		List<MobileElement> errorMessages = driver
 				.findElements(By.xpath("//android.widget.TextView[contains(@resource-id,'validation')]"));
-		// Comparing the with the no.of error messages displayed, as we tried to create
-		// an employee without providing any detail, error message count should be 4
+		// Comparing the with the no.of error messages displayed, as we tried to
+		// create
+		// an employee without providing any detail, error message count should
+		// be 4
 		assertTrue(errorMessages.size() == 4);
 	}// EOM
 
@@ -63,7 +65,8 @@ public class EmployeeCreation extends BasePage {
 		for (WebElement e : availableEmployeesAfterDeleting) {
 			employeeNamesAfterDeleting.add(e.getText());
 		}
-		// After deleting the first available employee, comparing the new available
+		// After deleting the first available employee, comparing the new
+		// available
 		// employee names, they should not be available
 		assertNotEquals(employeeNames.get(0), employeeNamesAfterDeleting.get(0));
 
@@ -71,7 +74,8 @@ public class EmployeeCreation extends BasePage {
 
 	public void testAdvertisementAfterAddingTwoEmployees() throws Exception {
 
-		// Initially at position 3, Advertisement will be displayed. So we have declared
+		// Initially at position 3, Advertisement will be displayed. So we have
+		// declared
 		// position as 3.
 		int adviewPosition = 3;
 		clickOnElement(By.id("fab"));
@@ -91,14 +95,16 @@ public class EmployeeCreation extends BasePage {
 		List<MobileElement> availableEmployees = driver.findElements(By.xpath(
 				"//androidx.recyclerview.widget.RecyclerView[contains(@resource-id,'employeesRecyclerView')]/android.widget.LinearLayout"));
 		do {
-			// creating xpath for advertisement button view of advertisement at position 3
+			// creating xpath for advertisement button view of advertisement at
+			// position 3
 			// using the linear layout class.
-			WebElement advertiser = driver.findElement(By.xpath(
-					"//androidx.recyclerview.widget.RecyclerView[contains(@resource-id,'employeesRecyclerView')]/android.widget.LinearLayout["
+			WebElement advertiser = driver.findElement(By
+					.xpath("//androidx.recyclerview.widget.RecyclerView[contains(@resource-id,'employeesRecyclerView')]/android.widget.LinearLayout["
 							+ adviewPosition + "]//android.widget.ImageView"));
 			// Validating Advertisement button.
 			assertTrue(advertiser.isEnabled());
-			// Increasing the position value by 3, as we should (expected) get Advertisement
+			// Increasing the position value by 3, as we should (expected) get
+			// Advertisement
 			// button after addign 2 employees.
 			adviewPosition = adviewPosition + 3;
 		} while (adviewPosition <= availableEmployees.size());
@@ -107,13 +113,16 @@ public class EmployeeCreation extends BasePage {
 
 	public void testCreateDeleteEmployeesAndRemoveAdvertisements() throws Exception {
 		List<String> employees = createEmployee(9, "Test", "Professional");
-		// As per the requirement, we need to delete user1: considered user1 from the
+		// As per the requirement, we need to delete user1: considered user1
+		// from the
 		// created users (excluded existing users).
 		deleteEmployee(employees.get(0));
-		// As per the requirement, we need to delete user2: considered user2 from the
+		// As per the requirement, we need to delete user2: considered user2
+		// from the
 		// created users (excluded existing users)
 		deleteEmployee(employees.get(1));
-		// As per the requirement, we need to delete user10: considered user10 from the
+		// As per the requirement, we need to delete user10: considered user10
+		// from the
 		// created users (excluded existing users)
 		deleteEmployee(employees.get(9));
 		scrollDown();
