@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite configfailurepolicy="continue" guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [Employees]">
+  <test thread-count="5" verbose="10" name="Employees(failed)">
+    <classes>
+      <class name="employeesTest.TestEmployees">
+        <methods>
+          <include name="testCreateDeleteEmployeesAndRemoveAdvertisement"/>
+          <include name="setUp"/>
+          <include name="quit"/>
+        </methods>
+      </class> <!-- employeesTest.TestEmployees -->
+    </classes>
+  </test> <!-- Employees(failed) -->
+</suite> <!-- Failed suite [Employees] -->

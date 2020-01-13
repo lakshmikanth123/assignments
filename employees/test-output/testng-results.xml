@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Employees" duration-ms="332096" started-at="2020-01-13T12:05:58Z" finished-at="2020-01-13T12:11:30Z">
+    <groups>
+    </groups>
+    <test name="Employees" duration-ms="332096" started-at="2020-01-13T12:05:58Z" finished-at="2020-01-13T12:11:30Z">
+      <class name="employeesTest.TestEmployees">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:employeesTest.TestEmployees@1d16f93d]" name="setUp" is-config="true" duration-ms="6387" started-at="2020-01-13T12:05:58Z" finished-at="2020-01-13T12:06:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testAdvertisements()[pri:0, instance:employeesTest.TestEmployees@1d16f93d]" name="testAdvertisements" duration-ms="45108" started-at="2020-01-13T12:06:04Z" finished-at="2020-01-13T12:06:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAdvertisements -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:employeesTest.TestEmployees@1d16f93d]" name="quit" is-config="true" duration-ms="966" started-at="2020-01-13T12:06:50Z" finished-at="2020-01-13T12:06:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:employeesTest.TestEmployees@1d16f93d]" name="setUp" is-config="true" duration-ms="6554" started-at="2020-01-13T12:06:50Z" finished-at="2020-01-13T12:06:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testCreateDeleteEmployeesAndRemoveAdvertisement()[pri:0, instance:employeesTest.TestEmployees@1d16f93d]" name="testCreateDeleteEmployeesAndRemoveAdvertisement" duration-ms="253509" started-at="2020-01-13T12:06:57Z" finished-at="2020-01-13T12:11:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateDeleteEmployeesAndRemoveAdvertisement -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:employeesTest.TestEmployees@1d16f93d]" name="quit" is-config="true" duration-ms="886" started-at="2020-01-13T12:11:11Z" finished-at="2020-01-13T12:11:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:employeesTest.TestEmployees@1d16f93d]" name="setUp" is-config="true" duration-ms="4585" started-at="2020-01-13T12:11:11Z" finished-at="2020-01-13T12:11:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testDeleteEmployees()[pri:0, instance:employeesTest.TestEmployees@1d16f93d]" name="testDeleteEmployees" duration-ms="5130" started-at="2020-01-13T12:11:16Z" finished-at="2020-01-13T12:11:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteEmployees -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:employeesTest.TestEmployees@1d16f93d]" name="quit" is-config="true" duration-ms="977" started-at="2020-01-13T12:11:21Z" finished-at="2020-01-13T12:11:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:employeesTest.TestEmployees@1d16f93d]" name="setUp" is-config="true" duration-ms="4522" started-at="2020-01-13T12:11:22Z" finished-at="2020-01-13T12:11:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testMandateFieldsEmployee()[pri:0, instance:employeesTest.TestEmployees@1d16f93d]" name="testMandateFieldsEmployee" duration-ms="2583" started-at="2020-01-13T12:11:27Z" finished-at="2020-01-13T12:11:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMandateFieldsEmployee -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:employeesTest.TestEmployees@1d16f93d]" name="quit" is-config="true" duration-ms="846" started-at="2020-01-13T12:11:29Z" finished-at="2020-01-13T12:11:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- employeesTest.TestEmployees -->
+    </test> <!-- Employees -->
+  </suite> <!-- Employees -->
+</testng-results>

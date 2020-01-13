@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Employees"  verbose="10"  configfailurepolicy="continue">
+<test name="Employees">
+	  <classes>
+			<class name="employeesTest.TestEmployees" />
+	  </classes>
+</test>
+</suite> 
