@@ -19,7 +19,7 @@ public class Globaldriver {
 
 	@AfterMethod
 	public void quit() {
-		// close the app
+		// close the app.
 		getDriver().quit();
 	}
 

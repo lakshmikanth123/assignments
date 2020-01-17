@@ -177,6 +177,8 @@ public class EmployeeCreation extends BasePage {
 
 	public void deleteEmployee(String employeeName) throws Exception {
 		boolean flag = true;
+		scrollDown();
+		scrollDown();
 		// Creating xpath dynamically using employee name
 		do {
 			try {
