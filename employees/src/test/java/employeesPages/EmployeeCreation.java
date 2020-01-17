@@ -30,19 +30,17 @@ public class EmployeeCreation extends BasePage {
 		super(driver);
 		this.driver = driver;
 	}
-
+//The below method checks and confirm the error messages, when the user tries to create withot entering mandate fields
 	public void testMandateFields() throws Exception {
 		clickOnElement(By.id("fab"));
-		driver.findElement(By.id("createButton")).click();
+		clickOnElement(By.id("createButton"));
 		List<MobileElement> errorMessages = driver
 				.findElements(By.xpath("//android.widget.TextView[contains(@resource-id,'validation')]"));
-		// Comparing the with the no.of error messages displayed, as we tried to
-		// create
-		// an employee without providing any detail, error message count should
-		// be 4
+		// Comparing the with the no.of error messages displayed, as we tried to create an employee without providing any detail, error message count should be 4
 		assertTrue(errorMessages.size() == 4);
 	}// EOM
 
+	//This method selects job and project from the dropdown, jus we need pass the input strings which need to be selected
 	public void selectJobAndProject(String jobTitle, String currentProject) throws Exception {
 		clickOnElement(By.id("titleSpinner"));
 		clickOnElement(By.xpath("//android.widget.TextView[@text='" + jobTitle + "']"));
@@ -51,7 +49,7 @@ public class EmployeeCreation extends BasePage {
 		clickOnElement(By.xpath("//android.widget.TextView[@text='" + currentProject + "']"));
 		driver.hideKeyboard();
 	}
-
+//This will delete one employee and confrims whether it got deleted or not.
 	public void testDeleteEmployee() throws Exception {
 		List<MobileElement> availableEmployees = driver.findElements(By.id("fullNameTextView"));
 		List<String> employeeNames = new ArrayList<String>();
@@ -62,21 +60,18 @@ public class EmployeeCreation extends BasePage {
 		clickOnElement(By.id("deleteEmployeeButton"));
 		List<MobileElement> availableEmployeesAfterDeleting = driver.findElements(By.id("fullNameTextView"));
 		List<String> employeeNamesAfterDeleting = new ArrayList<String>();
+		Thread.sleep(5000);
+		availableEmployeesAfterDeleting = driver.findElements(By.id("fullNameTextView"));
 		for (WebElement e : availableEmployeesAfterDeleting) {
 			employeeNamesAfterDeleting.add(e.getText());
 		}
-		// After deleting the first available employee, comparing the new
-		// available
-		// employee names, they should not be available
+		// After deleting the first available employee, comparing the new available employee names, they should not be available
 		assertNotEquals(employeeNames.get(0), employeeNamesAfterDeleting.get(0));
-
 	}
 
+//This Checks whether advertisement is getting added or not after creating two employees
 	public void testAdvertisementAfterAddingTwoEmployees() throws Exception {
-
-		// Initially at position 3, Advertisement will be displayed. So we have
-		// declared
-		// position as 3.
+		// Initially at position 3, Advertisement will be displayed. So we have declared position as 3.
 		int adviewPosition = 3;
 		clickOnElement(By.id("fab"));
 		enterText(By.id("firstNameEditText"), "NewUser1");
@@ -95,22 +90,19 @@ public class EmployeeCreation extends BasePage {
 		List<MobileElement> availableEmployees = driver.findElements(By.xpath(
 				"//androidx.recyclerview.widget.RecyclerView[contains(@resource-id,'employeesRecyclerView')]/android.widget.LinearLayout"));
 		do {
-			// creating xpath for advertisement button view of advertisement at
-			// position 3
-			// using the linear layout class.
+			// creating xpath for advertisement button view of advertisement at position 3 using the linear layout class.
 			WebElement advertiser = driver.findElement(By
 					.xpath("//androidx.recyclerview.widget.RecyclerView[contains(@resource-id,'employeesRecyclerView')]/android.widget.LinearLayout["
 							+ adviewPosition + "]//android.widget.ImageView"));
 			// Validating Advertisement button.
 			assertTrue(advertiser.isEnabled());
-			// Increasing the position value by 3, as we should (expected) get
-			// Advertisement
-			// button after addign 2 employees.
+			// Increasing the position value by 3, as we should (expected) get Advertisement button after adding 2 employees.
 			adviewPosition = adviewPosition + 3;
 		} while (adviewPosition <= availableEmployees.size());
 
 	}
 
+	//The below method will create employees and delete the selected employees from the list and after that it will delete all the advertisements
 	public void testCreateDeleteEmployeesAndRemoveAdvertisements() throws Exception {
 		List<String> employees = createEmployee(9, "Test", "Professional");
 		// As per the requirement, we need to delete user1: considered user1
@@ -130,7 +122,7 @@ public class EmployeeCreation extends BasePage {
 		deleteAdvertisement();
 
 	}
-
+//This method will create the employees, just we need to pass the no.of employees and firstName and last name references
 	public List<String> createEmployee(int employees, String firstName, String LastName) throws Exception {
 		List<String> employeeNames = new ArrayList<String>();
 		for (int i = 0; i <= employees; i++) {
@@ -147,6 +139,7 @@ public class EmployeeCreation extends BasePage {
 
 	}
 
+	//This method will do a scroll up on the device, created using the height and width of the device
 	public void scrollUp() throws Exception {
 		try {
 			int pressX = driver.manage().window().getSize().width / 2;
@@ -160,7 +153,7 @@ public class EmployeeCreation extends BasePage {
 			System.out.println("exit scroll");
 		}
 	}
-
+	//This method will do a scroll down on the device, created using the height and width of the device
 	public void scrollDown() throws Exception {
 		try {
 			int pressX = driver.manage().window().getSize().width / 2;
@@ -175,6 +168,7 @@ public class EmployeeCreation extends BasePage {
 		}
 	}
 
+	//This will delete employee from the available list. Input we need to pass is the name of the employee
 	public void deleteEmployee(String employeeName) throws Exception {
 		boolean flag = true;
 		scrollDown();
@@ -197,7 +191,7 @@ public class EmployeeCreation extends BasePage {
 		} while (flag);
 		clickOnElement(By.id("deleteEmployeeButton"));
 	}
-
+//This will delete all the advertisements available 
 	public void deleteAdvertisement() throws Exception {
 		boolean flag = false;
 		List<MobileElement> advertisement = driver.findElements(By.id("adView"));

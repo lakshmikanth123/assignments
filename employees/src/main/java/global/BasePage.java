@@ -42,7 +42,7 @@ public class BasePage {
 	 */
 	public void clickOnElement(By by) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 30);
+			WebDriverWait wait = new WebDriverWait(driver, 60);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 			driver.findElement(by).click();
 		} catch (Exception e) {
